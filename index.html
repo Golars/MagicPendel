@@ -6,15 +6,16 @@ and open the template in the editor.
 -->
 <html lang="ru">
     <head>
-        <title>Magic Pendel::Authorise</title>
+        <title>Magic Pendel::Main</title>
         <meta charset="UTF-8">
+
         <meta name="description" content="">
+        <meta name="keywords" content="Вставьте сюда Ваши эффективные ключевые слова" />
         <meta name="author" content="">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/normalize.css" rel="stylesheet">
-        <link href="css/login.css" rel="stylesheet">
-        <link href="css/font-awesome/css/font-awesome-ie7.css" rel="stylesheet">
-        <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -28,99 +29,114 @@ and open the template in the editor.
         <link rel="apple-touch-icon-precomposed" href="/wp-content/themes/clear-theme/img/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="/wp-content/themes/clear-theme/img/favicon.png">
 
-        <style>
-            .socImg {
-                width: 40px; 
-                height: 40px;
+        <style type="text/css">
+            body {
+                /*padding-top: 20px;*/
+                padding-bottom: 40px;
             }
-            a, a:link, a:hover, a:active { text-decoration:  none; color: black}
+
+            /* Custom container */
+            .container-narrow {
+                margin: 0 auto;
+                max-width: 700px;
+            }
+            .container-narrow > hr {
+                /*margin: 30px 0;*/
+            }
+
+            /* Main marketing message and sign up button */
+            .jumbotron {
+                margin: 60px 0;
+                text-align: center;
+            }
+            .jumbotron h1 {
+                font-size: 4em;
+                /*line-height: 1;*/
+            }
+            .jumbotron .btn {
+                font-size: 21px;
+                padding: 14px 24px;
+            }
+
+            /* Supporting marketing content */
+            .marketing {
+                margin: 60px 0;
+            }
+            .marketing p + h4 {
+                margin-top: 28px;
+            }
+
         </style>
     </head>
     <body>
-        <div style="width: 99%; height:5%">
-            <img src="img/logo.png" alt="Magic Pendel" style="margin-left: 25%; margin-top: 3%; width: 50%"/>
-        </div>
-        <div class="box">
-            <nav id="tabs" class="tabs">
-                <a id="tabLogin" class="iconLogin active blueBox" title="Войти"></a>
-                <a id="tabRegister" class="iconRegister greenBox" title="Регистрация"></a>
-                <a id="tabForgot" class="iconForgot redBox" title="Забыл пароль?"></a>
-            </nav>
+        <div class="container-narrow">
 
-            <div class="containerWrapper">
+            <div class="masthead">
+                <h3 class="muted"><img src="img/logo.png" alt="Magic Pendel"/></h3>
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="/">Главная</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <!--<li><a href="#">Купить пендель</a></li>-->
+                    <!--<li><a href="#">Личный кабинет</a></li>-->
+                </ul>
 
-                <!-- login container -->
-                <div id="containerLogin" class="tabContainer active">
-                    <form action="#">
-                        <h2 class="loginTitle">Авторизация</h2>
-                        <div class="loginContent">
-                            <div class="inputWrapper">
-                                <input type="text" placeholder="Логин" />
-                            </div>
-                            <div class="inputWrapper">
-                                <input type="password" placeholder="Пароль"/>
-                            </div>
-                        </div>
-                        <div>
-                            <span>Войти через</span>
-                            <img src="img/social/Facebook.png" alt="1" class="socImg" />
-                            <img src="img/social/Google-Plus.png" alt="2" class="socImg"/>
-                            <img src="img/social/Twitter.png" alt="3" class="socImg"/>
-                            <img src="img/social/vkon.png" alt="3" class="socImg"/>
-                        </div>
-                        <button class="blueBox"><span class="iconLogin"></span> ВОЙТИ</button>
-                        <div style="height: 5px"></div>
-                        <a href="main.html">Зарегистрироваться позже</a>
-                        <div class="clear"></div>
-                    </form>
-                </div>
-
-                <!-- register container -->
-                <div id="containerRegister" class="tabContainer">
-                    <form action="do some action here!">
-                        <h2 class="loginTitle">Регистрация</h2>
-                        <div class="registerContent">
-                            <div class="inputWrapper">
-                                <input type="text" placeholder="Ваше имя" />
-                            </div>
-                            <div class="inputWrapper">
-                                <input type="password" placeholder="Ваш email"/>
-                            </div>
-                        </div>
-                        <button class="greenBox"><span class="iconRegister"></span> Зарегистрироваться</button>
-                        <div class="clear"></div>
-                    </form>
-                </div>
-                <div class="clear"></div>
-
-                <!-- forgot container -->
-                <div id="containerForgot" class="tabContainer">
-                    <form action="do some action here!">
-                        <h2 class="loginTitle">Восстановления пароля</h2>
-                        <div class="loginContent">
-                            <div class="inputWrapper">
-                                <input type="text" placeholder="Ваш email" />
-                            </div>
-                            <div class="placeholder"></div>
-                        </div>
-                        <button class="redBox"><span class="iconForgot"></span> Восстановить</button>
-                        <div class="clear"></div>
-                    </form>
-                </div>
-                <div class="clear"></div>
             </div>
-        </div>
-        <script src="js/jquery/jquery.js"></script>
-        <script>
-            $("#tabs").on("click", "a", function() {
-                var me = $(this);
 
-                $(".active").removeClass("active");
-                me.addClass("active");
-                $("#" + me.attr("id").replace("tab", "container")).addClass("active");
-                return false;
-            });
-        </script>
-        <!-- from vladmaxi.net/developer/lesson75/demo/22/index.html -->
+            <hr>
+
+            <div class="jumbotron">
+                <h1>Подтолкни себя к цели!</h1>
+                <br>
+                <object>
+                    <param name="movie" value="//www.youtube.com/v/T-D1KVIuvjA?version=3&amp;hl=ru_RU"/>
+                    <param name="allowFullScreen" value="true"/>
+                    <param name="allowscriptaccess" value="always"/>
+                    <embed src="//www.youtube.com/v/T-D1KVIuvjA?version=3&amp;hl=ru_RU" type="application/x-shockwave-flash" 
+                           width="560" height="315" allowscriptaccess="always" allowfullscreen="true" />
+                </object>
+                <br>
+                <a class="btn btn-large btn-success" href="index.html">Зарегистрируйтеcь уже сегодня!</a>
+            </div>
+
+            <hr>
+
+            <div class="row-fluid marketing">
+                <div class="span6">
+                    <h4>Что такое цель?</h4>
+                    <p>Это мечта, имеющая точные сроки и другие измеряемые свойства.</p>
+
+                    <h4>Что такое мечта?</h4>
+                    <p>Это пока еще несостоявшаяся идея.</p>
+
+                    <h4>Как поставить цель?</h4>
+                    <p>Нужно невыполненную идею (мечту) ограничить временными рамками и определить для нее измеряемые свойства. Вот и все.</p>
+                </div>
+
+                <div class="span6">
+                    <h4>Как достигнуть цель?</h4>
+                    <p>Когда цель записана на бумаге, имеет временные ограничения, и наделена измеряемыми свойствами, ее реализация зависит только от НАШИХ действий.</p>
+
+                    <h4>Что мешает достигнуть цель?</h4>
+                    <p>Ответ очень простой. Недостаточная мотивация. Если цель не возбуждает, то и достигнуть ее будет очень сложно.</p>
+
+                    <h4>Почему цель не возбуждает?</h4>
+                    <p>Не та цель. Недостаточно важная цель. Нет веры, что цель можно достигнуть.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer">
+                <p>All rights reserved © MaxML, 2013</p>
+            </div>
+
+        </div> <!-- /container -->
+
+
+        <!--Javascript-->
+        <script src="js/jquery/jquery.js"></script>
+        <script src="js/twitter-bootstrap/js/bootstrap.js"></script>
+
     </body>
 </html>
