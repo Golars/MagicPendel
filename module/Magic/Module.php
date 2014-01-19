@@ -2,6 +2,8 @@
 
 namespace Magic;
 
+use Magic\View\Helper as ViewHelper;
+
 class Module {
 
     public function getAutoloaderConfig() {
@@ -20,7 +22,17 @@ class Module {
     public function getConfig() {
         return include __DIR__ . '/config/module.config.php';
     }
+    
+    public function onBootstrap($e)
+    {
+        $app = $e->getApplication();
+        $serviceManager = $app->getServiceManager();
 
+        $serviceManager->get('viewhelpermanager')->setFactory('paramsView', function($sm) use ($e) {
+            return new ViewHelper($e->getRouteMatch());
+        });
+    }
+    
     public function getServiceConfig() {
         return array(
             'factories' => array(
